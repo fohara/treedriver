@@ -1,0 +1,2 @@
+# Behavior Trees to Simulate User Interaction
+Revelation: UI automation is actually like creating an NPC for the app under test. Since behavior trees are a powerful way to model NPCs, why not use them to model UI automation tests?

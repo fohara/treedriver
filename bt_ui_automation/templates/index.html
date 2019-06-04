@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>App Arena</title>
+
+    <!-- CSS -->
+    <link href="{{url_for('static', filename='css/vendor/bulma.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/index.css')}}" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container app-container">
+
+        <!-- Banner -->
+        <div class="columns is-vcentered" id="app-banner">
+            <div class="column is-one-third">
+                <h1 class="title">
+                    Welcome to the App Arena!
+                </h1>
+                <h2 class="subtitle">
+                    Only the Fault Tolerant Survive
+                </h2>
+            </div>
+            <div class="column is-two-thirds">
+                <img src="{{url_for('static', filename='images/arena.png')}}" alt="Arena Illustration" id="arena-illustration">
+            </div>
+        </div>
+
+        <!-- Choose a Level -->
+        <div class="columns">
+            <div class="column"></div>
+            <div class="column has-text-centered">
+                <h1 class="title">Choose a Level</h1>
+            </div>
+            <div class="column"></div>
+        </div>
+
+        <!-- Levels -->
+        <div class="columns">
+
+            <!-- Level 1: Crumbling Infrastructure -->
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="{{url_for('static', filename='images/level_one.png')}}" alt="Level One">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <p class="title is-4">Crumbling Infrastructure</p>
+                                <p class="subtitle is-6">Browsers could crash at any time!</p>
+                            </div>
+                        </div>
+
+                        <div class="content has-text-centered">
+                            <a class="button is-large is-info" href="/level_one" id="level-one">Select</a>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level 2: Broken Buttons -->
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="{{url_for('static', filename='images/level_two.png')}}" alt="Level Two">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <p class="title is-4">Broken Buttons</p>
+                                <p class="subtitle is-6">Clicking a button might have no effect!</p>
+                            </div>
+                        </div>
+
+                        <div class="content has-text-centered">
+                            <a class="button is-large is-info" href="/level_two" id="level-two">Select</a>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level 3: Modal Mayhem -->
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="{{url_for('static', filename='images/level_three.png')}}" alt="Level Three">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <p class="title is-4">Modal Mayhem</p>
+                                <p class="subtitle is-6">Any call to action might be your last!</p>
+                            </div>
+                        </div>
+
+                        <div class="content has-text-centered">
+                            <a class="button is-large is-info" href="/level_three" id="level-three">Select</a>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

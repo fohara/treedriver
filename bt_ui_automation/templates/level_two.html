@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>App Arena: Level 2</title>
+
+    <!-- CSS -->
+    <link href="{{url_for('static', filename='css/vendor/bulma.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/index.css')}}" rel="stylesheet">
+</head>
+<body>
+
+<section class="hero is-medium is-danger is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Level 2
+            </h1>
+            <h2 class="subtitle">
+                Broken Buttons
+            </h2>
+        </div>
+    </div>
+</section>
+
+<div class="container app-container">
+    <div class="columns">
+        <div class="column"></div>
+        <div class="column has-text-centered" id="message-container">
+            <button class="button is-large is-danger">Click for Victory</button>
+        </div>
+        <div class="column"></div>
+    </div>
+</div>
+
+<script type="application/javascript">
+    console.log('Level 2');
+    var clickCount = 0;
+
+    let successMessage = `
+    <article class="message is-success">
+                <div class="message-header">
+                    <p>Victory</p>
+                    <button class="delete" aria-label="delete"></button>
+                </div>
+                <div class="message-body">
+                    <p>Your tenacity is impressive!</p>
+                </div>
+            </article>
+    `;
+
+    document.querySelector('button').addEventListener('click', (event) => {
+        clickCount++;
+
+        if (clickCount === 3) {
+            console.log('Level 2 Success!');
+            document.querySelector('button').remove();
+            document.querySelector('#message-container').innerHTML = successMessage;
+        }
+    })
+</script>
+
+</body>
+</html>

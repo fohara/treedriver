@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>App Arena: Level 1</title>
+
+    <!-- CSS -->
+    <link href="{{url_for('static', filename='css/vendor/bulma.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/index.css')}}" rel="stylesheet">
+</head>
+<body>
+
+<script type="application/javascript">
+    console.log('Level 1');
+    let timeout = 2000;
+
+    let successMessage = `
+    <article class="message is-success">
+                <div class="message-header">
+                    <p>Full Recovery</p>
+                    <button class="delete" aria-label="delete"></button>
+                </div>
+                <div class="message-body">
+                    <p><strong>System Resources are Optimal</strong></p>
+                    <br>
+                    <p>Your fault tolerance is admirable!</p>
+                    <br>
+                    <p>You have survived the <strong>OOM Killer</strong>!</p>
+                </div>
+            </article>
+    `;
+
+    setTimeout(function () {
+        console.log('Level 1 Success!');
+        document.querySelector('article').remove();
+        document.querySelector('#message-container').innerHTML = successMessage;
+    }, timeout);
+</script>
+
+<section class="hero is-medium is-warning is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Level 1
+            </h1>
+            <h2 class="subtitle">
+                Crumbling Infrastructure
+            </h2>
+        </div>
+    </div>
+</section>
+
+<div class="container app-container">
+    <div class="columns">
+        <div class="column"></div>
+        <div class="column" id="message-container">
+            <article class="message is-warning">
+                <div class="message-header">
+                    <p>Warning</p>
+                    <button class="delete" aria-label="delete"></button>
+                </div>
+                <div class="message-body">
+                    <p><strong>System Resources are Critically Low</strong></p>
+                    <br>
+                    <p>The browser could crash at any time, only the fault tolerant should continue!</p>
+                    <br>
+                    <p>Beware the <strong>OOM Killer</strong>!</p>
+                </div>
+            </article>
+        </div>
+        <div class="column"></div>
+    </div>
+</div>
+
+</body>
+</html>

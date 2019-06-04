@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>App Arena: Level 3</title>
+
+    <!-- CSS -->
+    <link href="{{url_for('static', filename='css/vendor/bulma.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/index.css')}}" rel="stylesheet">
+</head>
+<body>
+
+<section class="hero is-medium is-dark is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Level 3
+            </h1>
+            <h2 class="subtitle">
+                Modal Mayhem
+            </h2>
+        </div>
+    </div>
+</section>
+
+<div class="container app-container">
+    <div class="columns">
+        <div class="column"></div>
+        <div class="column has-text-centered" id="message-container">
+            <button class="button is-large is-dark">Click to Destroy Dark Patterns</button>
+        </div>
+        <div class="column"></div>
+    </div>
+</div>
+
+<div class="modal is-active">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Dark Design Spell</p>
+            <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            <p>
+                Not so fast! Maybe you should become distracted from your quest, and buy something?
+            </p>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success">Sell Me Everything!</button>
+            <button class="button">Only Sell Me One Thing, but Make it Confusing</button>
+        </footer>
+    </div>
+</div>
+
+<script type="application/javascript">
+    console.log('Level 3');
+
+    var modalCount = 0;
+
+    const modalMaker = function(msg) {
+        return `
+        <div class="modal is-active">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Darkness</p>
+              <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.
+                </p>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-success">Sell Me Everything!</button>
+                <button class="button">Cancel</button>
+            </footer>
+          </div>
+        </div>
+        `
+    };
+
+    let successMessage = `
+    <article class="message is-success">
+                <div class="message-header">
+                    <p>Victory</p>
+                    <button class="delete" aria-label="delete"></button>
+                </div>
+                <div class="message-body">
+                    <p>Your focus is unparalleled!</p>
+                </div>
+            </article>
+    `;
+
+    document.querySelector('button').addEventListener('click', (event) => {
+        console.log('Level 3 Success!');
+        document.querySelector('button').remove();
+        document.querySelector('#message-container').innerHTML = successMessage;
+    });
+
+    document.querySelector('body').addEventListener('click', (event) => {
+        if(event.target.classList.contains('delete')) {
+            document.querySelector('.modal').remove();
+        }
+    });
+
+//    setInterval(function() {
+//        if (modalCount < 1) {
+//            let modal = document.createElement('div');
+//            modal.innerHTML = modalMaker();
+//            document.querySelector('body').appendChild(modal);
+//            modalCount++;
+//        }
+//    }, 1000);
+</script>
+
+</body>
+</html>
